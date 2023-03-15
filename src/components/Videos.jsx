@@ -1,7 +1,8 @@
 import React from 'react'
 
-export const Videos = () => {
+export const Videos = (props) => {
+  console.log(props.videos)
   return (
-    <div>Videofsgrs</div>
+    <div>Videos...</div>
   )
 }

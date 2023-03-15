@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from '@mui/system';
 import {categories} from '../utilities/constants'
 
-export const SideBar = () => {
+export const SideBar = (props) => {
     const selectedCat = 'New'
   return (
     <Stack direction={'row'}
@@ -21,14 +21,19 @@ export const SideBar = () => {
                 <button key={index}
                 className='category-btn'
                 style={{
-                    background: data.name == selectedCat && '#fc1508',
+                    background: data.name === selectedCat && '#fc1508',
                     color:'#fff'
-                }}>
+                }}
+                onClick={e=>{
+                    e.preventDefault();
+                    props.setSelectedCat(data.name)
+                }}
+                >
                     <span style={{
                         marginRight:'15px',
-                        color: data.name == selectedCat ? 'white': '#fc1508'
+                        color: data.name === selectedCat ? 'white': '#fc1508'
                     }}>{data.icon}</span>
-                    <span style={{opacity: data.name ==selectedCat ? 1 : 0.5}}>{data.name}</span>
+                    <span style={{opacity: data.name === selectedCat ? 1 : 0.5}}>{data.name}</span>
                 </button>
             )
         })}

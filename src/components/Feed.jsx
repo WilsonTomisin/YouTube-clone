@@ -2,8 +2,26 @@ import React from 'react'
 import {Box,Stack,Typography} from '@mui/material'
 import { SideBar } from './SideBar'
 import { Videos } from './Videos'
+import { FetchData } from '../utilities/FetchData'
+// import axios from 'axios'
 
 export const Feed = () => {
+
+    const [ selectedCat, setSelectedCat] = React.useState('New')
+    const [video, setVideo] = React.useState([]);
+        
+    React.useEffect(()=>{
+        FetchData(`search?q=${selectedCat}`).then(data=>{
+                console.log(`This is the data => ${data}`)
+                setVideo(data.items)
+        })
+
+
+    },[selectedCat])
+
+
+    
+    
   return (
         <Stack sx={{
             flexDirection:{
@@ -25,9 +43,8 @@ export const Feed = () => {
                 },
                 
                 }}>
-               <SideBar/>
+               <SideBar selectedCat ={selectedCat} setSelectedCat={setSelectedCat}  />
                 <Typography variant='body2' className='copyright' sx={{mt:1.5}}>
-
                     CopyRight 2022 @Wilson
                 </Typography>
                 
@@ -38,9 +55,10 @@ export const Feed = () => {
 
             }}>
                 <Typography variant='h3' fontWeight= 'bold' sx={{color: 'white'}}>
-                    New <span style={{color: '#fc1508'}}>Videos</span>
+                    {selectedCat} <span style={{color: '#fc1508'}}>Videos</span>
                 </Typography>
-                <Videos videos={[]}/>
+                
+                <Videos videos={video}/>
             </Box>
 
                 
