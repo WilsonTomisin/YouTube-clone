@@ -3,7 +3,7 @@ import { Stack } from '@mui/system';
 import {categories} from '../utilities/constants'
 
 export const SideBar = (props) => {
-    const selectedCat = 'New'
+    // const selectedCat = 'New'
   return (
     <Stack direction={'row'}
     sx={{
@@ -21,9 +21,10 @@ export const SideBar = (props) => {
                 <button key={index}
                 className='category-btn'
                 style={{
-                    background: data.name === selectedCat && '#fc1508',
+                    background: data.name === props.selectedCat && '#fc1508',
                     color:'#fff'
                 }}
+                value={props.selectedCat}
                 onClick={e=>{
                     e.preventDefault();
                     props.setSelectedCat(data.name)
@@ -31,9 +32,9 @@ export const SideBar = (props) => {
                 >
                     <span style={{
                         marginRight:'15px',
-                        color: data.name === selectedCat ? 'white': '#fc1508'
+                        color: data.name === props.selectedCat ? 'white': '#fc1508'
                     }}>{data.icon}</span>
-                    <span style={{opacity: data.name === selectedCat ? 1 : 0.5}}>{data.name}</span>
+                    <span style={{opacity: data.name === props.selectedCat ? 1 : 0.5}}>{data.name}</span>
                 </button>
             )
         })}

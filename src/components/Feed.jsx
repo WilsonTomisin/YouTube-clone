@@ -12,8 +12,7 @@ export const Feed = () => {
         
     React.useEffect(()=>{
         FetchData(`search?q=${selectedCat}`).then(data=>{
-                console.log(`This is the data => ${data}`)
-                setVideo(data.items)
+            setVideo(data.items)
         })
 
 
