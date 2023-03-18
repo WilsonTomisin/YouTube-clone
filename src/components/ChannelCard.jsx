@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 import { demoProfilePicture } from '../utilities/constants'
 import { margin } from '@mui/system'
 
-export const ChannelCard = ({video}) => {
-  // console.log(video)
+export const ChannelCard = ({ChannelDetail, marginTop}) => {
+  // console.log(ChannelDetail)
   return (
     <Box sx={{
       borderRadius: '20px',
@@ -19,24 +19,25 @@ export const ChannelCard = ({video}) => {
         md: '310px'
       },
       margin: 'auto',
+      marginTop: marginTop
       
       }}>
-      <Link to={`/channel/${video?.id?.channelId}`}>
+      <Link to={`/channel/${ChannelDetail?.id?.channelId}`}>
         <CardContent sx={{display:'flex' , flexDirection:'column', justifyContent:'center', textAlign:'center', color:'#fff'}}>
-          <CardMedia image={video?.snippet?.thumbnails?.high?.url} 
+          <CardMedia image={ChannelDetail?.snippet?.thumbnails?.high?.url} 
           sx={{width:180,
             height: 180,
             borderRadius: '50%'
            
            }}
-           alt={video?.snippet?.title}/>
+           alt={ChannelDetail?.snippet?.title}/>
           <Typography variant='h6' color={'gray'} fontWeight='bold' mt={'10px'}>
-              {video?.snippet?.title}
+              {ChannelDetail?.snippet?.title}
               <CheckCircle sx={{fontSize:'15px', color:'turquoise', ml:'5px'}}/>
           </Typography>
-          {video?.statistics?.subscriberCount &&
-          <Typography>
-            {parseInt(video?.statistics?.subscriberCount).toLocaleString()} Subscribers
+          {ChannelDetail?.statistics?.subscriberCount &&
+          <Typography variant='h6' color={'#fff'}>
+            {parseInt(ChannelDetail?.statistics?.subscriberCount).toLocaleString()} Subscribers
           </Typography>}
         </CardContent>
       </Link>
