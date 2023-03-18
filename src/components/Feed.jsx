@@ -51,6 +51,7 @@ export const Feed = () => {
             <Box p={2} sx={{
                 overflowY:'auto',
                 height:'90vh',
+                
 
             }}>
                 <Typography variant='h3' fontWeight= 'bold' sx={{color: 'white'}}>
