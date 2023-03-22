@@ -3,6 +3,7 @@ import {Box,Stack,Typography} from '@mui/material'
 import { SideBar } from './SideBar'
 import { Videos } from './Videos'
 import { FetchData } from '../utilities/FetchData'
+
 // import axios from 'axios'
 
 export const Feed = () => {
@@ -58,7 +59,7 @@ export const Feed = () => {
                     {selectedCat} <span style={{color: '#fc1508'}}>Videos</span>
                 </Typography>
                 
-                <Videos videos={video}/>
+                <Videos videos={video} selectedCat={selectedCat} />
             </Box>
 
                 

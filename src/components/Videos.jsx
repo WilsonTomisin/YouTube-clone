@@ -4,7 +4,7 @@ import { VideoCard } from './VideoCard'
 import { ChannelCard } from './ChannelCard'
 
 
-export const Videos = ({videos}) => {
+export const Videos = ({videos,selectedCat}) => {
   
   return (
     <Stack direction={'row'} justifyContent={'start'} flexWrap={'wrap'} gap={2}>

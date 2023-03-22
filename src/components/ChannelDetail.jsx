@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { ChannelCard } from './ChannelCard';
@@ -9,20 +9,22 @@ import { FetchData } from '../utilities/FetchData';
 export const ChannelDetail = () => {
   const { id } = useParams();
   const [channelDetail , setChannelDetail] = React.useState(null)
-  const [video, setVideo] = React.useState([])
-  console.log(id)
-
-  console.log(video, channelDetail)
+  const [channelVideo, setChannelVideo] = React.useState([])
+  console.log(channelDetail)
+  
   React.useEffect(()=>{
     
-      FetchData(`channels?id=${id}`).then((data)=>(
+      FetchData(`channels?part=snippet&id=${id}`).then((data)=>(
         setChannelDetail(data.items[0])
       ))
-      FetchData(`search?part=snippet&id=${id}`).then((data)=>(
-        setVideo(data.items)
+      FetchData(`search?channelId=${id}&part=snippet,id`).then((data)=>(
+        setChannelVideo(data.items)
+        
       ))
     
   },[id])
+
+
 
   return (
     <Box minHeight={'95vh'}>
@@ -38,12 +40,13 @@ export const ChannelDetail = () => {
           margin: 'auto',
           fontFamily:'cursive'
         }}>
-          {channelDetail?.snippet?.title}
+          {/* {channelDetail?.snippet?.title} */}
         </div>
         <ChannelCard ChannelDetail={channelDetail} marginTop= '-100px'/>
         <Box display={'flex'} p={2}>
             <Box>
-              <Videos videos={video}/>
+               <Videos videos={channelVideo}/>
+    
             </Box>
 
         </Box>
