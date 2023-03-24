@@ -12,7 +12,7 @@ export const Feed = () => {
     const [video, setVideo] = React.useState([]);
         
     React.useEffect(()=>{
-        FetchData(`search?q=${selectedCat}`).then(data=>{
+        FetchData(`search?q=${selectedCat}&part='snippet,id'`).then(data=>{
             setVideo(data.items)
         })
 

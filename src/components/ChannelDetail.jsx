@@ -39,15 +39,14 @@ export const ChannelDetail = () => {
           zIndex:10,
           margin: 'auto',
           fontFamily:'cursive'
-        }}>
+        }}/>
           {/* {channelDetail?.snippet?.title} */}
-        </div>
+        
         <ChannelCard ChannelDetail={channelDetail} marginTop= '-100px'/>
         <Box display={'flex'} p={2}>
-            <Box>
-               <Videos videos={channelVideo}/>
-    
-            </Box>
+            <Box sx={{mr:{sm: '100px'}}}/>
+              <Videos  videos={channelVideo}/>
+            
 
         </Box>
       </Box>

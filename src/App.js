@@ -17,7 +17,7 @@ export const App = () => {
             <Route path='/' element={<Feed/>}/>
             <Route path='/video/:id' element={<VideoDetail/>}/>
             <Route path='/channel/:id' element={<ChannelDetail/>}/>
-            <Route path='/search/:searchterm' element={<SearchFeed/>}/>
+            <Route path='/search/:searchTerm' element={<SearchFeed/>}/>
           </Routes>
 
         </Box>
