@@ -13,7 +13,7 @@ const SearchBar = () => {
         event.preventDefault()
         if (searchTerm) {
             navigate(`/search/${searchTerm}`)
-            console.log(searchTerm)
+            // console.log(searchTerm)
             setSearchTerm('')
         }
     }

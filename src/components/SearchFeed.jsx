@@ -3,6 +3,7 @@ import {Box,Typography} from '@mui/material'
 import { Videos } from './Videos'
 import { FetchData } from '../utilities/FetchData'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export const SearchFeed = () => {
@@ -12,15 +13,16 @@ export const SearchFeed = () => {
     const { searchTerm } = useParams()
         
     React.useEffect(()=>{
-        FetchData(`search?q=${searchTerm}&part='snippet,id'`).then(data=>{
+        FetchData(`search?q=${searchTerm}&part=snippet,id`).then(data=>{
             setVideo(data.items)
+            
         })
-
+        
 
     },[searchTerm])
 
-
     
+
     
   return (
     <Box p={2} sx={{
@@ -31,7 +33,12 @@ export const SearchFeed = () => {
           Search results for:  <span style={{color: '#fc1508'}}>{searchTerm}</span>
       </Typography>
                 
-      <Videos videos={video}/>
+      <Link>
+          <Videos videos={video}/>
+      </Link>
+      
+      
+      
     </Box>
 
                 

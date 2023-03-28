@@ -10,7 +10,7 @@ export const ChannelDetail = () => {
   const { id } = useParams();
   const [channelDetail , setChannelDetail] = React.useState(null)
   const [channelVideo, setChannelVideo] = React.useState([])
-  console.log(channelDetail)
+
   
   React.useEffect(()=>{
     
