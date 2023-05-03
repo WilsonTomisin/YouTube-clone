@@ -13,6 +13,7 @@ export const Feed = () => {
         
     React.useEffect(()=>{
         FetchData(`search?q=${selectedCat}&part='snippet,id'`).then(data=>{
+            // console.log(data)
             setVideo(data.items)
         })
 

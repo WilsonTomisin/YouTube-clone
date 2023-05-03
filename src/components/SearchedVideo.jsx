@@ -6,11 +6,11 @@ import { CheckCircle } from '@mui/icons-material'
 import { FetchData } from '../utilities/FetchData'
 import { Videos } from './Videos'
 
-export const VideoDetail = () => {
+export const SearchedVideo = () => {
   
   const [videoDetail, setvideoDetail] = useState(null);
   const [videos, setvideos] = useState(null)
-  // const [channelDetails, setchannelDetails] = useState()
+
   const {id} = useParams()
   
 
