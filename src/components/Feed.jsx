@@ -4,7 +4,7 @@ import { SideBar } from './SideBar'
 import { Videos } from './Videos'
 import { FetchData } from '../utilities/FetchData'
 
-// import axios from 'axios'
+
 
 export const Feed = () => {
 

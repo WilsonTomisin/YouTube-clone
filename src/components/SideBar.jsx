@@ -3,7 +3,7 @@ import { Stack } from '@mui/system';
 import {categories} from '../utilities/constants'
 
 export const SideBar = (props) => {
-    // const selectedCat = 'New'
+
   return (
     <Stack direction={'row'}
     sx={{
