@@ -3,10 +3,10 @@ import { Box, CardMedia,CardContent,Typography} from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
 import { demoProfilePicture } from '../utilities/constants'
-import { margin } from '@mui/system'
+
 
 export const ChannelCard = ({ChannelDetail, marginTop}) => {
-  // console.log(ChannelDetail)
+
   return (
     <Box sx={{
       borderRadius: '20px',

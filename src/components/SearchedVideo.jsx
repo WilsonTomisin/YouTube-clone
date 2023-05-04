@@ -24,9 +24,7 @@ export const SearchedVideo = () => {
         return setvideos(res.items)
       })
       
-      /*FetchData(`channels?part=snippet&id=${id}`).then((data)=>(
-          setchannelDetails(data.items)
-      )).catch(e => console.log(e))*/
+    
 
       
   },[id])
@@ -53,8 +51,7 @@ export const SearchedVideo = () => {
   }
   
 
-  // console.log(channelDetails)
-  // console.log(videoDetail.snippet)
+  
   
   
   return (

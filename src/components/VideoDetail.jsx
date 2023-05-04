@@ -9,8 +9,7 @@ import { Videos } from './Videos'
 export const VideoDetail = () => {
   
   const [videoDetail, setvideoDetail] = useState(null);
-  const [videos, setvideos] = useState(null)
-  // const [channelDetails, setchannelDetails] = useState()
+  const [videos, setvideos] = useState(null);
   const {id} = useParams()
   
 

@@ -40,7 +40,7 @@ export const ChannelDetail = () => {
           margin: 'auto',
           fontFamily:'cursive'
         }}/>
-          {/* {channelDetail?.snippet?.title} */}
+          
         
         <ChannelCard ChannelDetail={channelDetail} marginTop= '-100px'/>
         <Box display={'flex'} p={2}>
